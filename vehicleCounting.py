@@ -39,20 +39,9 @@ utils = torch.hub.load('NVIDIA/DeepLearningExamples:torchhub', 'nvidia_ssd_proce
 #     return (int(massC[2][0] + smeshX),int(massC[2][1] + smeshY))
         
     
-def usedBox (secondFrame, usedBoxes):
-    a = secondFrame   
-    b = usedBoxes 
-    res = [obj for obj in a if obj not in b] + [obj for obj in b if obj not in a]
-    if res == []:
-        return True
-    else:
-        return False
 
-def notUsedBox (secondFrame, usedBoxes):
-    a = secondFrame   
-    b = usedBoxes 
-    res = [obj for obj in a if obj not in b] + [obj for obj in b if obj not in a]
-    return res
+
+
 
 # def distance(x, y, type='euclidian', x_weight=1.0, y_weight=1.0):
 #     if type == 'euclidian':
@@ -176,6 +165,29 @@ class ObjectDetectionPipeline:
             return img[starty:starty + out_size, startx:startx + out_size]
         elif len(img.shape) == 4:
             return img[:, starty:starty + out_size, startx:startx + out_size]
+
+    def usedBox (self, secondFrame, usedBoxes):
+        """ Функция для проверки использованных боксов
+        >>>notUsedBox([[0, 1, 2, 3]], [[0, 1, 2, 3]] )
+        True
+        """
+        a = secondFrame   
+        b = usedBoxes 
+        res = [obj for obj in a if obj not in b] + [obj for obj in b if obj not in a]
+        if res == []:
+            return True
+        else:
+            return False
+
+    def notUsedBox (self, secondFrame, usedBoxes):
+        """ Функция для нахождения неиспользованных боксов
+        >>>notUsedBox([[]], [[0, 1, 2, 3]] )
+        [[0, 1, 2, 3]]
+        """
+        a = secondFrame   
+        b = usedBoxes 
+        res = [obj for obj in a if obj not in b] + [obj for obj in b if obj not in a]
+        return res
 
     def getCenter(self, a):
         """ Функция для нахождения центра машинки из массива бокса(Правого верхнего угла и левого нижнего)
@@ -538,7 +550,7 @@ class ObjectDetectionPipeline:
                 self.minDistance = 90
                 self.minDistanceFlag = False
                 for j in range(0, len(self.secondFrame)):                                           
-                    if usedBox(self.secondFrame,self.usedBoxes):
+                    if self.usedBox(self.secondFrame,self.usedBoxes):
                         self.usedBoxesflag = True
                         break
                     if intersection(lastFrame, self.secondFrame[j]):                                                         
@@ -574,7 +586,7 @@ class ObjectDetectionPipeline:
                     break
                 self.counterDictin+=1
                 
-        self.unUsedboxes = notUsedBox(self.secondFrame, self.usedBoxes)
+        self.unUsedboxes = self.notUsedBox(self.secondFrame, self.usedBoxes)
 
         if not self.unUsedboxes == []:
             for boxes in self.unUsedboxes:
