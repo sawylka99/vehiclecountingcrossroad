@@ -31,5 +31,5 @@ python.exe loadform.py
 
 <p align="center"> Пример правильно начерченных зон и линий <p/>
 
-[image1]: https://sun9-39.userapi.com/impg/wtutVxne-0JaIU2Qsub9VNmt9uGD2gn17mu1Wg/7bp-mkEra3U.jpg?size=968x970&quality=96&sign=b10589ca4d73802f1f93f3f04a794faa&type=album
+[image1]: https://sun9-20.userapi.com/impg/-kvExFNHO35KPvkqJVlEvaoIkc_0UscyhDsOhw/QVTapjgt-CY.jpg?size=970x970&quality=96&sign=34b2d10e542e0d08054f730dc78619d8&type=album
 
