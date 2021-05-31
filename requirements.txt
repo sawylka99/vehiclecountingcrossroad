@@ -1,0 +1,9 @@
+pip3 install torch==1.8.1+cu102 torchvision==0.9.1+cu102 torchaudio===0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+pip3 install opencv-python
+pip install pafy 
+pip install PyQt5
+pip install numpy==1.20.2
+pip install opencv-python==4.3.0.36
+pip install matplotlib==3.3.4
+pip install pillow==8.2.0
+pip install Shapely==1.7.1
