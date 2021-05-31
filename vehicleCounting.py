@@ -181,7 +181,7 @@ class ObjectDetectionPipeline:
 
     def notUsedBox (self, secondFrame, usedBoxes):
         """ Функция для нахождения неиспользованных боксов
-        >>>notUsedBox([[]], [[0, 1, 2, 3]] )
+        >>>notUsedBox([[ ]], [[0, 1, 2, 3]] )
         [[0, 1, 2, 3]]
         """
         a = secondFrame   
