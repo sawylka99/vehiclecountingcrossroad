@@ -168,7 +168,7 @@ class ObjectDetectionPipeline:
 
     def usedBox (self, secondFrame, usedBoxes):
         """ Функция для проверки использованных боксов
-        >>>notUsedBox([[0, 1, 2, 3]], [[0, 1, 2, 3]] )
+        >>>usedBox([[0, 1, 2, 3]], [[0, 1, 2, 3]] )
         True
         """
         a = secondFrame   
