@@ -61,11 +61,7 @@ class Ui(QtWidgets.QDialog, Form):
         self.EnterButton.clicked.connect(self.DrawFirstFrame)
         self.startObjectDetection.clicked.connect(self.startDetection)
         self.poligonButton.clicked.connect(self.drawPolygon)
-        self.ClearWindow.clicked.connect(self.Clear)
-        
-    def Clear(self):
-        self.label.clear()
-        
+             
 
     def drawPolygon(self):
         

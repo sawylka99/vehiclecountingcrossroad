@@ -114,19 +114,6 @@
     <string>Poligon</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="ClearWindow">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>510</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Clear</string>
-   </property>
-  </widget>
  </widget>
  <resources/>
  <connections>
