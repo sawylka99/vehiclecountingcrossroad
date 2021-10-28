@@ -641,6 +641,10 @@ class ObjectDetectionPipeline:
 
 
 class DrowVehicles:
+
+"""
+Вынести весь цикл программы из init в отдельную функцию 
+"""
     def __init__(self, videoPath ='', massLines = [], massPolygon = [], massPolygonZone1 = [], massPolygonZone2 = [], massPolygonZone3 = [], massPolygonZone4 = []):
         self.green_zone = np.array([
         # (0, 280), (0, 960), (960, 960), (960, 355), (340,260)
